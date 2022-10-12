@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root xmlns:android="http://schemas.android.com/apk/res/android">
+	<androidManifestUpdates>
+
+		<loopElements tag="receiver">
+			<setStringFromAttribute  result="ExportTag" tag="$" name="android:exported"/>
+			<setBoolIsEqual result="ShouldNotAddExportTag" arg1="$S(ExportTag)" arg2="true"/>
+			<if condition="ShouldNotAddExportTag">
+				<false>
+					<addAttribute tag="$" name="android:exported" value="false"/>
+				</false>
+			</if>
+		</loopElements>
+
+		<loopElements tag="activity">
+			<setStringFromAttribute  result="ExportTag" tag="$" name="android:exported"/>
+			<setBoolIsEqual result="ShouldNotAddExportTag" arg1="$S(ExportTag)" arg2="true"/>
+			<if condition="ShouldNotAddExportTag">
+				<false>
+					<addAttribute tag="$" name="android:exported" value="false"/>
+				</false>
+			</if>
+		</loopElements>
+
+		<loopElements tag="service">
+			<setStringFromAttribute  result="ExportTag" tag="$" name="android:exported"/>
+			<setBoolIsEqual result="ShouldNotAddExportTag" arg1="$S(ExportTag)" arg2="true"/>
+			<if condition="ShouldNotAddExportTag">
+				<false>
+					<addAttribute tag="$" name="android:exported" value="false"/>
+				</false>
+			</if>
+		</loopElements>
+    </androidManifestUpdates>
+
+</root>
